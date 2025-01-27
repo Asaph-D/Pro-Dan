@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #FF6B35;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        .details {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Order Confirmation</h1>
+        </div>
+        <div class="content">
+            <p>Thank you for your order!</p>
+            <div class="details">
+                <p><strong>Receipt Number:</strong> <span th:text="${receiptNumber}"></span></p>
+                <p><strong>Total Amount:</strong> <span th:text="${amount}"></span></p>
+                <p><strong>Delivery Address:</strong> <span th:text="${deliveryAddress}"></span></p>
+            </div>
+            <p>Your order has been confirmed and is being prepared. You will receive updates about your delivery status.</p>
+            <p>Track your order here: <a th:href="${frontendUrl + '/orders/' + receiptNumber}">Track Order</a></p>
+        </div>
+        <div class="footer">
+            <p>If you have any questions, please contact our support team.</p>
+        </div>
+    </div>
+</body>
+</html>

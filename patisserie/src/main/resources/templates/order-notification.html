@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .order-details {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>New Order Notification</h1>
+        </div>
+        <div class="content">
+            <p>A new order has been received:</p>
+            <div class="order-details">
+                <p><strong>Receipt Number:</strong> <span th:text="${receiptNumber}"></span></p>
+                <p><strong>Delivery Address:</strong> <span th:text="${deliveryAddress}"></span></p>
+
+                <h3>Order Items:</h3>
+                <div class="item" th:each="item : ${orderDetails}">
+                    <p>
+                        <strong th:text="${item.name}"></strong><br/>
+                        Quantity: <span th:text="${item.quantity}"></span><br/>
+                        Price: <span th:text="${item.price}"></span> €
+                    </p>
+                </div>
+            </div>
+            <p>Please prepare this order for delivery.</p>
+        </div>
+    </div>
+</body>
+</html>
