@@ -1,0 +1,14 @@
+.navLink {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .navLink:hover {
+    color: #ffd2aa;
+    transform: scale(1.05);
+  }
+  

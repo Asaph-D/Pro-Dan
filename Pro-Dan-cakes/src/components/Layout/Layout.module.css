@@ -1,0 +1,117 @@
+.container {
+  min-height: 100vh;
+  background-color: #fffaf0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #e55d22, #ff7a4a);
+  color: white;
+  padding: 1rem 0;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.navLinks a {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.navLinks a:hover {
+  color: #8d8d8d;
+  text-decoration: none;
+}
+
+.contactBar {
+  background: #fff;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.contactInfo,
+.location {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: #e55d22;
+}
+
+.footer {
+  background-color: #e55d22;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(106, 106, 106);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+.barOpen {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.contactBar {
+  background-color: #ececec;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+  animation: fadeIn 2s ease-in-out;
+
+  }
+
+  .navLinks {
+    display: none;
+  }
+  .navLinksOpen {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(106, 106, 106);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    z-index: 100;
+  }
+}
